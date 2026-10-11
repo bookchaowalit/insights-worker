@@ -1,0 +1,8 @@
+system_id: bookchaowalit/private/solo-insights-worker
+prefix: CARD
+brand: "INSIGHTS WORKER"
+subtitle: "Cloudflare Worker เสิร์ฟหน้า insights ที่สร้างอัตโนมัติ"
+footer: "solo-insights-worker — Product Card"
+color: "#355070"
+audience: internal
+tier: L0

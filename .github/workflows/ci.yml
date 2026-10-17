@@ -1,0 +1,22 @@
+# CI + security baseline (DevSecOps Phase 1). Public repository: GitHub-hosted runners.
+# Security only: the repository is a single generated Cloudflare Worker script (worker.js,
+# written by publish_pages.py) with no package.json, lockfile or tests, so there is no
+# Node app for ci-node to build or test.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  security:
+    uses: bookchaowalit/platform-ci-workflows/.github/workflows/security.yml@c37ef9d113eefb3ed45429717cb7ca201192c3fc # v1.0.1
